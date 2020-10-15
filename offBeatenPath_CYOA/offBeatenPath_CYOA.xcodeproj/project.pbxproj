@@ -101,8 +101,8 @@
 			children = (
 				6DCAAF272538DCBD00BC135B /* AppDelegate.swift */,
 				6DCAAF292538DCBD00BC135B /* SceneDelegate.swift */,
-				6DCAAF2B2538DCBD00BC135B /* ViewController.swift */,
-				6DCAAF2D2538DCBD00BC135B /* Main.storyboard */,
+				6DCAAF5B2538DD5700BC135B /* Controller */,
+				6DCAAF5A2538DD5100BC135B /* View */,
 				6DCAAF302538DCC000BC135B /* Assets.xcassets */,
 				6DCAAF322538DCC000BC135B /* LaunchScreen.storyboard */,
 				6DCAAF352538DCC000BC135B /* Info.plist */,
@@ -126,6 +126,22 @@
 				6DCAAF4B2538DCC100BC135B /* Info.plist */,
 			);
 			path = offBeatenPath_CYOAUITests;
+			sourceTree = "<group>";
+		};
+		6DCAAF5A2538DD5100BC135B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6DCAAF2D2538DCBD00BC135B /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6DCAAF5B2538DD5700BC135B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6DCAAF2B2538DCBD00BC135B /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
