@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storyText.text = "Alright, it’s time for an adventure! Well, on a typical walking path to get some good exercise in. You’re at the beginning and there’s 2 ways to go. Take your pick!"
-        choice1Title.setTitle("North", for: .normal)
-        choice2Title.setTitle("South", for: .normal)
+        storyText.text = example.title
+        choice1Title.setTitle(example.choice1, for: .normal)
+        choice2Title.setTitle(example.choice2, for: .normal)
     }
 
     @IBOutlet weak var storyText: UILabel!
@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     @IBAction func choicePressed(_ sender: Any) {
         print("Hello World!")
     }
+
+    let example = Story(title: "Alright, it’s time for an adventure! Well, on a typical walking path to get some good exercise in. You’re at the beginning and there’s 2 ways to go. Take your pick!", choice1: "North", choice2: "South")
     
 }
+
 
