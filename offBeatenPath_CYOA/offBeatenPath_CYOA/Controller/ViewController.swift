@@ -21,8 +21,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice1Title: UIButton!
     @IBOutlet weak var choice2Title: UIButton!
     
-    @IBAction func choicePressed(_ sender: Any) {
+    @IBAction func choicePressed(_ sender: UIButton) {
         print("Hello World!")
+        let userAnswer = sender.currentTitle!
+        
+        if userAnswer == stories[0].choice1 {
+            storyText.text = stories[1].title
+            choice1Title.setTitle(stories[1].choice1, for: .normal)
+            choice2Title.setTitle(stories[1].choice2, for: .normal)
+        }
+        
+        if userAnswer == stories[0].choice2 {
+            storyText.text = stories[2].title
+            choice1Title.setTitle(stories[2].choice1, for: .normal)
+            choice2Title.setTitle(stories[2].choice2, for: .normal)
+        }
         
     }
 
