@@ -9,12 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var storyBrain = StoryBrain()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        storyText.text = stories[0].title
-        choice1Title.setTitle(stories[0].choice1, for: .normal)
-        choice2Title.setTitle(stories[0].choice2, for: .normal)
+       updateUI()
     }
 
     @IBOutlet weak var storyText: UILabel!
@@ -22,32 +21,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice2Title: UIButton!
     
     @IBAction func choicePressed(_ sender: UIButton) {
-        let userAnswer = sender.currentTitle!
-        var userNum: Int
-        
-        if userAnswer == stories[0].choice1 {
-            userNum = 1
-            updateUI(a: userNum)
-        }
-        
-        if userAnswer == stories[0].choice2 {
-            userNum = 2
-            updateUI(a: userNum)
-        }
-        
+        storyBrain.nextStory(userChoice: sender.currentTitle!)
+        updateUI()
     }
     
-    func updateUI(a: Int) {
-        storyText.text = stories[a].title
-        choice1Title.setTitle(stories[a].choice1, for: .normal)
-        choice2Title.setTitle(stories[a].choice2, for: .normal)
+    func updateUI() {
+        getStoryTitle()
+        getChoice1()
+        getChoice2()
     }
     
-    let stories = [
-        Story(title: "Alright, it’s time for an adventure! Well, on a typical walking path to get some good exercise in. You’re at the beginning and there’s 2 ways to go. Take your pick!", choice1: "North", choice2: "South"),
-        Story(title: "Onward! It’s mostly woods on the way, but after about 10 minutes of walking, you spot a friendly cat along the way. He begins to follow you. You...", choice1: "Let him follow", choice2: "Shoo him away"),
-        Story(title: "After about 15 minutes you begin to feel hungry. Of course you forgot to eat before your walk. Maybe there’s some berries in the woods off the path? You...", choice1: "Stray from Path", choice2: "Keep Walking")
-    ]
+    func getStoryTitle() {
+        storyText.text = storyBrain.getStoryTitle()
+    }
+    
+    func getChoice1() {
+        choice1Title.setTitle(storyBrain.getChoice1(), for: .normal)
+    }
+    
+    func getChoice2() {
+        choice2Title.setTitle(storyBrain.getChoice2(), for: .normal)
+    }
+    
 }
 
 
