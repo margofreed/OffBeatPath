@@ -23,23 +23,25 @@ class ViewController: UIViewController {
     
     @IBAction func choicePressed(_ sender: UIButton) {
         let userAnswer = sender.currentTitle!
+        var userNum: Int
         
         if userAnswer == stories[0].choice1 {
-            storyText.text = stories[1].title
-            choice1Title.setTitle(stories[1].choice1, for: .normal)
-            choice2Title.setTitle(stories[1].choice2, for: .normal)
+            userNum = 1
+            updateUI(a: userNum)
         }
         
         if userAnswer == stories[0].choice2 {
-            storyText.text = stories[2].title
-            choice1Title.setTitle(stories[2].choice1, for: .normal)
-            choice2Title.setTitle(stories[2].choice2, for: .normal)
+            userNum = 2
+            updateUI(a: userNum)
         }
         
     }
     
-    
-
+    func updateUI(a: Int) {
+        storyText.text = stories[a].title
+        choice1Title.setTitle(stories[a].choice1, for: .normal)
+        choice2Title.setTitle(stories[a].choice2, for: .normal)
+    }
     
     let stories = [
         Story(title: "Alright, it’s time for an adventure! Well, on a typical walking path to get some good exercise in. You’re at the beginning and there’s 2 ways to go. Take your pick!", choice1: "North", choice2: "South"),
