@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice2Title: UIButton!
     
     @IBAction func choicePressed(_ sender: UIButton) {
-        print("Hello World!")
         let userAnswer = sender.currentTitle!
         
         if userAnswer == stories[0].choice1 {
