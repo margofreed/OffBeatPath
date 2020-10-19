@@ -1,7 +1,2 @@
 # OffBeatPath
-A Choose Your Own Adventure story
-
-Working on getting the project setup and the code going. Understanding structs.
-Will figure out visuals later on. 
-
-Step 4 - Udemy
+A fully coded Choose Your Adventure story. Will add some graphics to this one later on. 
